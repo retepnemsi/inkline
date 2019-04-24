@@ -11,6 +11,7 @@ import ICollapsible from '@inkline/inkline/src/components/Collapsible';
 import ICollapsibleItem from '@inkline/inkline/src/components/CollapsibleItem';
 import IColumn from '@inkline/inkline/src/components/Column';
 import IContainer from '@inkline/inkline/src/components/Container';
+import IDatatable from '@inkline/inkline/src/components/Datatable';
 import IDropdown from '@inkline/inkline/src/components/Dropdown';
 import IDropdownDivider from '@inkline/inkline/src/components/DropdownDivider';
 import IDropdownItem from '@inkline/inkline/src/components/DropdownItem';
@@ -68,6 +69,7 @@ class Inkline {
         ICollapsibleItem,
         IColumn,
         IContainer,
+        IDatatable,
         IDropdown,
         IDropdownDivider,
         IDropdownItem,
@@ -136,6 +138,7 @@ export {
     ICollapsibleItem,
     IColumn,
     IContainer,
+    IDatatable,
     IDropdown,
     IDropdownDivider,
     IDropdownItem,

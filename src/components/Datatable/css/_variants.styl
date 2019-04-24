@@ -1,0 +1,39 @@
+//
+// Variants
+//
+for --variant-name, --variant in --variants['datatable']
+    --datatable-variant-text-color = -variant-color-by-luminance(--variant['color'], --variant-color-light, --variant-color-dark)
+    --datatable-variant-border-color = -variant-color-by-luminance(--variant['color'], lighten(--variant['color'], 5%), darken(--variant['color'], 5%))
+    --datatable-variant-hover-color = -variant-color-by-luminance(--variant['color'], lighten(--variant['color'], 6%), darken(--variant['color'], 6%))
+    --datatable-variant-stripe-color = -variant-color-by-luminance(--variant['color'], lighten(--variant['color'], 3%), darken(--variant['color'], 3%))
+    .datatable.-{--variant-name}
+        border-top-color: --datatable-variant-border-color
+        color: --datatable-variant-text-color
+
+        th, td
+            background-color: --variant['color']
+
+        // Bordered table
+        //
+        // Add borders to all sides of the table and table cells
+        //
+        &.-bordered
+            &, th, td
+                border-color: --datatable-variant-border-color
+
+
+        // Striped Table
+        //
+        // Default zebra-stripe styles (alternating gray and transparent backgrounds)
+        //
+        &.-striped
+            > tr:nth-of-type(odd)
+            tbody > tr:nth-of-type(odd)
+                th, td
+                    background-color: --datatable-variant-stripe-color
+
+        &.-hover
+            tbody tr
+                &:hover
+                    th, td
+                        background-color: --datatable-variant-hover-color
