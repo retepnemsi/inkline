@@ -24,7 +24,7 @@ export default {
         },
         responsive: {
             type: [Boolean, String],
-            default: false
+            default: true
         }
     },
     created() {
