@@ -53,26 +53,37 @@
         tbody tr
             th, td
                 if --transition-enabled and --transition['datatable']
-                    transition: background-color --transition-duration ease
+                    transition: background-color --transition-duration --transition-easing
 
 
     th
     td
     tbody + tbody
-        border-top-color: --border-color
+        border-top-color: --datatable-border-color
 
     thead th
-        border-bottom-color: --border-color
+        border-bottom-color: --datatable-border-color
 
     .dtd
     .dth
         display: flex
-        justify-content: flex-start
+        justify-content: space-between
         align-items: center
 
-        &.-count,
-        &.-number
+        &.-count
             justify-content: flex-end
+
+        &.-align-left
+            justify-content: flex-start
+        &.-align-center
+            justify-content: center
+        &.-align-right
+            justify-content: flex-end
+
+    .dth
+        .icon
+            padding-left: (--spacer / 2)
+            margin-left: auto
 
 .datatable
     @extend .datatable.-light
