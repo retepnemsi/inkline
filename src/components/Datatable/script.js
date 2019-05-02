@@ -23,11 +23,15 @@ export default {
         countColumn: {
             type: Object,
             default: () => ({})
+        },
+        defaultSortKey: {
+            type: String,
+            default: '#'
         }
     },
     data() {
         return {
-            sortBy: '#',
+            sortBy: this.defaultSortKey,
             sortDirection: 'asc'
         }
     },
