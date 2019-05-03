@@ -14,13 +14,15 @@
         </thead>
         <tbody>
             <tr class="dtr" :class="rowClass(row)" v-for="(row, rowIndex) in tableRows" :key="row.id">
-                <td v-for="(column, columnIndex) in tableColumns" :key="columnIndex">
-                    <div class="dtd" :class="columnClass(column, row)"
-                         v-if="column.type !== 'component'">
-                        {{tableRowsRendered[rowIndex][column.key]}}
-                    </div>
-                    <div class="dtd" v-else :is="column.component" :data="row"></div>
-                </td>
+                <slot name="row" :row="tableRowsRendered[rowIndex]" :data="row" :index="rowIndex">
+                    <td v-for="(column, columnIndex) in tableColumns" :key="columnIndex">
+                        <div class="dtd" :class="columnClass(column, row)"
+                             v-if="column.type !== 'component'">
+                            {{tableRowsRendered[rowIndex][column.key]}}
+                        </div>
+                        <div class="dtd" v-else :is="column.component" :data="row"></div>
+                    </td>
+                </slot>
             </tr>
         </tbody>
     </table>
