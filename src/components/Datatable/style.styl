@@ -66,18 +66,19 @@
 
     .dtd
     .dth
-        display: flex
-        justify-content: space-between
-        align-items: center
+        > span
+            display: flex
+            justify-content: space-between
+            align-items: center
 
-        &.-count
+        &.-count > span
             justify-content: flex-end
 
-        &.-align-left
+        &.-align-left > span
             justify-content: flex-start
-        &.-align-center
+        &.-align-center > span
             justify-content: center
-        &.-align-right
+        &.-align-right > span
             justify-content: flex-end
 
     .dth

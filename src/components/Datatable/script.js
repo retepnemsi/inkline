@@ -1,13 +1,6 @@
 import Table from '@inkline/inkline/src/components/Table';
 import { sortBy, getValueByPath } from "@inkline/inkline/src/helpers";
 
-// [
-//     { count: 1, config: { row: ['a b c'], columns: { count: 'a b c' } } }
-// ]
-//
-// row.config.rowClass
-// row.config.columnClass
-
 export default {
     name: 'IDatatable',
     extends: Table,
