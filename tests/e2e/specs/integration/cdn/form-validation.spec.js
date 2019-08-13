@@ -1,29 +1,21 @@
 describe('Integration', () => {
     describe('CDN', () => {
-        it('Basic installation', () => {
-            cy.visit(`/e2e/integration/cdn.spec.html`);
+        it('Form validation installation', () => {
+            cy.visit(`/e2e/integration/cdn/form-validation.spec.html`);
 
             cy.contains('h1', 'Inkline');
             cy.contains('p', 'Inkline');
+            cy.contains('form');
 
             cy
-                .get('a.button')
-                .should('contain', 'Documentation')
-                .should('have.attr', 'href')
-                .then((href) => expect(href).to.contain('https://inkline.io'));
-        });
-
-        it('Basic installation with validation', () => {
-            cy.visit(`/e2e/integration/cdn.spec.html`);
-
-            cy.contains('h1', 'Inkline');
-            cy.contains('p', 'Inkline');
+                .get('.form-input > input')
+                .should('exist')
+                .type('John Doe')
+                .clear();
 
             cy
-                .get('a.button')
-                .should('contain', 'Documentation')
-                .should('have.attr', 'href')
-                .then((href) => expect(href).to.contain('https://inkline.io'));
+                .get('.form-group.-error')
+                .should('exist');
         });
     });
 });
