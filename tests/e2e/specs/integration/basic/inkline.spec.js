@@ -1,16 +1,16 @@
+import Vue from 'vue';
+import Inkline from '@inkline/inkline';
+
 describe('Integration', () => {
     describe('Basic', () => {
-        it('Inkline', () => {
-            cy.visit(`/e2e/integration/cdn/inkline.spec.html`);
+        describe('Inkline', () => {
+            before((done) => {
+                Vue.use(Inkline);
+            });
 
-            cy.contains('h1', 'Inkline');
-            cy.contains('p', 'Inkline');
-
-            cy
-                .get('a.button')
-                .should('contain', 'Documentation')
-                .should('have.attr', 'href')
-                .then((href) => expect(href).to.contain('https://inkline.io'));
+            it('should have Inkline components defined', () => {
+                console.log(Vue.components);
+            });
         });
     });
 });
