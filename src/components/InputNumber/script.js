@@ -35,6 +35,10 @@ export default {
         step: {
             type: Number,
             default: 1
+        },
+        nocontrols: {
+            type: Boolean,
+            default: false
         }
     },
     methods: {
