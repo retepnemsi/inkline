@@ -36,7 +36,7 @@ export default {
             type: Number,
             default: 1
         },
-        nocontrols: {
+        controls: {
             type: Boolean,
             default: false
         }
