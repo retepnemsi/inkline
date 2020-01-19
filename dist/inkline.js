@@ -14665,6 +14665,12 @@ var ClearablePropertyMixin_component = normalizeComponent(
   components: {
     IFormGroup: FormGroup
   },
+  props: {
+    forceupper: {
+      type: Boolean,
+      default: false
+    }
+  },
   mixins: [AttributesProviderMixin, ClassesProviderMixin, InjectParentFormProviderMixin, ModelProviderMixin, SchemaProviderMixin, ClickInputRefMethodMixin, FocusInputRefMethodMixin, EmitChangeMethodMixin, EmitClickMethodMixin, EmitFocusMethodMixin, EmitHoverMethodMixin, EmitInputMethodMixin, EmitKeydownMethodMixin, ClearablePropertyMixin, properties_DisabledPropertyMixin, NamePropertyMixin, ParentFormGroupPropertyMixin, ReadonlyPropertyMixin, SizePropertyMixin, TabIndexPropertyMixin],
   created: function created() {
     var _this = this;
@@ -14685,6 +14691,18 @@ var ClearablePropertyMixin_component = normalizeComponent(
   mounted: function mounted() {
     if (this.schema && this.parentFormGroup) {
       this.$set(this.parentFormGroup, 'inputSchema', this.schema);
+    }
+  },
+  watch: {
+    value: {
+      immediate: true,
+      handler: function handler(value) {
+        if (forceupper) {
+          value = value.toUpperCase();
+        }
+
+        this.$emit('input', value);
+      }
     }
   }
 });
