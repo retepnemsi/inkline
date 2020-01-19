@@ -5,7 +5,7 @@ $label-margin-bottom: 0.5rem !default;
 
 $input-line-height: $line-height !default;
 
-$input-padding-base: spacers('1/2') spacers('1') !default;
+$input-padding-base: spacers('1/2') spacers('1/2') !default;
 $input-padding: size-map($input-padding-base, $sizes, $size-multipliers) !default;
 
 $input-prefix-padding-base: nth($input-padding-base, 2) * 4 !default;
