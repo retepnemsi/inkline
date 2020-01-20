@@ -14697,13 +14697,10 @@ var ClearablePropertyMixin_component = normalizeComponent(
     value: {
       immediate: true,
       handler: function handler(value) {
-        console.log(forceupper);
-
-        if (forceupper) {
+        if (this.forceupper) {
           value = value.toUpperCase();
         }
 
-        console.log(value);
         this.$emit('input', value);
       }
     }
