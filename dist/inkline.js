@@ -14672,6 +14672,15 @@ var ClearablePropertyMixin_component = normalizeComponent(
     }
   },
   mixins: [AttributesProviderMixin, ClassesProviderMixin, InjectParentFormProviderMixin, ModelProviderMixin, SchemaProviderMixin, ClickInputRefMethodMixin, FocusInputRefMethodMixin, EmitChangeMethodMixin, EmitClickMethodMixin, EmitFocusMethodMixin, EmitHoverMethodMixin, EmitInputMethodMixin, EmitKeydownMethodMixin, ClearablePropertyMixin, properties_DisabledPropertyMixin, NamePropertyMixin, ParentFormGroupPropertyMixin, ReadonlyPropertyMixin, SizePropertyMixin, TabIndexPropertyMixin],
+  methods: {
+    emitInput: function emitInput(value) {
+      if (this.forceupper) {
+        value = value.toUpperCase();
+      }
+
+      return this.$emit('input', value);
+    }
+  },
   created: function created() {
     var _this = this;
 
@@ -14691,17 +14700,6 @@ var ClearablePropertyMixin_component = normalizeComponent(
   mounted: function mounted() {
     if (this.schema && this.parentFormGroup) {
       this.$set(this.parentFormGroup, 'inputSchema', this.schema);
-    }
-  },
-  watch: {
-    value: {
-      immediate: true,
-      handler: function handler(value) {
-        // if (this.forceupper) {
-        value = value.toUpperCase(); // }
-
-        this.$emit('input', value);
-      }
     }
   }
 });
