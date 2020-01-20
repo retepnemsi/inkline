@@ -14675,6 +14675,8 @@ var ClearablePropertyMixin_component = normalizeComponent(
   EmitKeydownMethodMixin, ClearablePropertyMixin, properties_DisabledPropertyMixin, NamePropertyMixin, ParentFormGroupPropertyMixin, ReadonlyPropertyMixin, SizePropertyMixin, TabIndexPropertyMixin],
   methods: {
     emitInput: function emitInput(value) {
+      console.log("forceupper = ".concat(this.forceupper));
+
       if (this.forceupper) {
         value = value.toUpperCase();
       }
