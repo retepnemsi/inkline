@@ -3,7 +3,7 @@ import IFormGroup from '@inkline/inkline/src/components/FormGroup';
 import AttributesProviderMixin from '@inkline/inkline/src/mixins/components/providers/AttributesProviderMixin';
 import ClassesProviderMixin from '@inkline/inkline/src/mixins/components/providers/ClassesProviderMixin';
 import InjectParentFormProviderMixin from '@inkline/inkline/src/mixins/forms/providers/InjectParentFormProviderMixin';
-import ModelProviderMixin from '@inkline/inkline/src/mixins/forms/providers/ModelProviderMixin';
+import UpperCaseModelProviderMixin from '@inkline/inkline/src/mixins/forms/providers/UpperCaseModelProviderMixin';
 import SchemaProviderMixin from '@inkline/inkline/src/mixins/forms/providers/SchemaProviderMixin';
 
 import ClickInputRefMethodMixin from '@inkline/inkline/src/mixins/forms/methods/ClickInputRefMethodMixin';
@@ -33,7 +33,7 @@ export default {
         AttributesProviderMixin,
         ClassesProviderMixin,
         InjectParentFormProviderMixin,
-        ModelProviderMixin,
+        UpperCaseModelProviderMixin,
         SchemaProviderMixin,
 
         ClickInputRefMethodMixin,
