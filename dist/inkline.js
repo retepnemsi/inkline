@@ -13780,7 +13780,6 @@ var ClickInputRefMethodMixin_component = normalizeComponent(
      * Handler for change event
      */
     emitInput: function emitInput(value) {
-      console.log("emitInput(".concat(value));
       return this.$emit('input', value);
     }
   }
@@ -14425,12 +14424,17 @@ var templatevue_type_template_id_3735c412_scoped_true_staticRenderFns = []
 
 // CONCATENATED MODULE: ./src/components/Input/template.html?vue&type=template&id=3735c412&scoped=true&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/mixins/forms/providers/ModelProviderMixin.vue?vue&type=script&lang=js&
-/* harmony default export */ var ModelProviderMixinvue_type_script_lang_js_ = ({
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/mixins/forms/providers/UpperCaseModelProviderMixin.vue?vue&type=script&lang=js&
+
+/* harmony default export */ var UpperCaseModelProviderMixinvue_type_script_lang_js_ = ({
   props: {
     value: {
       type: String,
       default: ''
+    },
+    forceupper: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -14449,25 +14453,31 @@ var templatevue_type_template_id_3735c412_scoped_true_staticRenderFns = []
         return this.value;
       },
       set: function set(value) {
+        console.log("Set ".concat(value, " force uppercase ").concat(this.forceupper));
+
+        if (this.forceupper) {
+          value = value.toUpperCase();
+        }
+
         return this.$emit('input', value);
       }
     }
   }
 });
-// CONCATENATED MODULE: ./src/mixins/forms/providers/ModelProviderMixin.vue?vue&type=script&lang=js&
- /* harmony default export */ var providers_ModelProviderMixinvue_type_script_lang_js_ = (ModelProviderMixinvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./src/mixins/forms/providers/ModelProviderMixin.vue
-var ModelProviderMixin_render, ModelProviderMixin_staticRenderFns
+// CONCATENATED MODULE: ./src/mixins/forms/providers/UpperCaseModelProviderMixin.vue?vue&type=script&lang=js&
+ /* harmony default export */ var providers_UpperCaseModelProviderMixinvue_type_script_lang_js_ = (UpperCaseModelProviderMixinvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/mixins/forms/providers/UpperCaseModelProviderMixin.vue
+var UpperCaseModelProviderMixin_render, UpperCaseModelProviderMixin_staticRenderFns
 
 
 
 
 /* normalize component */
 
-var ModelProviderMixin_component = normalizeComponent(
-  providers_ModelProviderMixinvue_type_script_lang_js_,
-  ModelProviderMixin_render,
-  ModelProviderMixin_staticRenderFns,
+var UpperCaseModelProviderMixin_component = normalizeComponent(
+  providers_UpperCaseModelProviderMixinvue_type_script_lang_js_,
+  UpperCaseModelProviderMixin_render,
+  UpperCaseModelProviderMixin_staticRenderFns,
   false,
   null,
   null,
@@ -14475,7 +14485,7 @@ var ModelProviderMixin_component = normalizeComponent(
   
 )
 
-/* harmony default export */ var ModelProviderMixin = (ModelProviderMixin_component.exports);
+/* harmony default export */ var UpperCaseModelProviderMixin = (UpperCaseModelProviderMixin_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/mixins/forms/methods/FocusInputRefMethodMixin.vue?vue&type=script&lang=js&
 /* harmony default export */ var FocusInputRefMethodMixinvue_type_script_lang_js_ = ({
   methods: {
@@ -14643,6 +14653,7 @@ var ClearablePropertyMixin_component = normalizeComponent(
 
 
 
+ // import ModelProviderMixin from '@inkline/inkline/src/mixins/forms/providers/ModelProviderMixin';
 
 
 
@@ -14672,7 +14683,8 @@ var ClearablePropertyMixin_component = normalizeComponent(
       default: false
     }
   },
-  mixins: [AttributesProviderMixin, ClassesProviderMixin, InjectParentFormProviderMixin, ModelProviderMixin, SchemaProviderMixin, ClickInputRefMethodMixin, FocusInputRefMethodMixin, EmitChangeMethodMixin, EmitClickMethodMixin, EmitFocusMethodMixin, EmitHoverMethodMixin, EmitInputMethodMixin, EmitKeydownMethodMixin, ClearablePropertyMixin, properties_DisabledPropertyMixin, NamePropertyMixin, ParentFormGroupPropertyMixin, ReadonlyPropertyMixin, SizePropertyMixin, TabIndexPropertyMixin],
+  mixins: [AttributesProviderMixin, ClassesProviderMixin, InjectParentFormProviderMixin, // ModelProviderMixin,
+  UpperCaseModelProviderMixin, SchemaProviderMixin, ClickInputRefMethodMixin, FocusInputRefMethodMixin, EmitChangeMethodMixin, EmitClickMethodMixin, EmitFocusMethodMixin, EmitHoverMethodMixin, EmitInputMethodMixin, EmitKeydownMethodMixin, ClearablePropertyMixin, properties_DisabledPropertyMixin, NamePropertyMixin, ParentFormGroupPropertyMixin, ReadonlyPropertyMixin, SizePropertyMixin, TabIndexPropertyMixin],
   created: function created() {
     var _this = this;
 
@@ -15277,6 +15289,57 @@ var templatevue_type_template_id_40301384_scoped_true_staticRenderFns = []
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.every.js
 var es_array_every = __webpack_require__("a623");
 
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/mixins/forms/providers/ModelProviderMixin.vue?vue&type=script&lang=js&
+/* harmony default export */ var ModelProviderMixinvue_type_script_lang_js_ = ({
+  props: {
+    value: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    /**
+     * Get the value of the individual form item
+     */
+    currentValue: function currentValue() {
+      return this.value;
+    },
+
+    /**
+     * Bind the value of an individual form item
+     */
+    model: {
+      get: function get() {
+        return this.value;
+      },
+      set: function set(value) {
+        return this.$emit('input', value);
+      }
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/mixins/forms/providers/ModelProviderMixin.vue?vue&type=script&lang=js&
+ /* harmony default export */ var providers_ModelProviderMixinvue_type_script_lang_js_ = (ModelProviderMixinvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/mixins/forms/providers/ModelProviderMixin.vue
+var ModelProviderMixin_render, ModelProviderMixin_staticRenderFns
+
+
+
+
+/* normalize component */
+
+var ModelProviderMixin_component = normalizeComponent(
+  providers_ModelProviderMixinvue_type_script_lang_js_,
+  ModelProviderMixin_render,
+  ModelProviderMixin_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var ModelProviderMixin = (ModelProviderMixin_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/eslint-loader??ref--13-0!./src/components/Select/script.js?vue&type=script&lang=js&
 
 
