@@ -14677,7 +14677,7 @@ var ClearablePropertyMixin_component = normalizeComponent(
      */
     emitKeydown: function emitKeydown(value) {
       if (this.forceupper) {
-        value = value.toUpper();
+        value = value.toUpperCase();
       }
 
       return this.$emit('keydown', value);
@@ -14688,7 +14688,7 @@ var ClearablePropertyMixin_component = normalizeComponent(
      */
     emitKeyup: function emitKeyup(value) {
       if (this.forceupper) {
-        value = value.toUpper();
+        value = value.toUpperCase();
       }
 
       return this.$emit('keyup', value);
