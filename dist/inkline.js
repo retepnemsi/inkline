@@ -13780,6 +13780,7 @@ var ClickInputRefMethodMixin_component = normalizeComponent(
      * Handler for change event
      */
     emitInput: function emitInput(value) {
+      console.log("emitInput(".concat(value));
       return this.$emit('input', value);
     }
   }
@@ -14671,31 +14672,7 @@ var ClearablePropertyMixin_component = normalizeComponent(
       default: false
     }
   },
-  methods: {
-    /**
-     * Handler for keydown event
-     */
-    emitKeydown: function emitKeydown(value) {
-      if (this.forceupper) {
-        value = value.toUpperCase();
-      }
-
-      return this.$emit('keydown', value);
-    },
-
-    /**
-     * Handler for keyup event
-     */
-    emitKeyup: function emitKeyup(value) {
-      if (this.forceupper) {
-        value = value.toUpperCase();
-      }
-
-      return this.$emit('keyup', value);
-    }
-  },
-  mixins: [AttributesProviderMixin, ClassesProviderMixin, InjectParentFormProviderMixin, ModelProviderMixin, SchemaProviderMixin, ClickInputRefMethodMixin, FocusInputRefMethodMixin, EmitChangeMethodMixin, EmitClickMethodMixin, EmitFocusMethodMixin, EmitHoverMethodMixin, EmitInputMethodMixin, // EmitKeydownMethodMixin,
-  ClearablePropertyMixin, properties_DisabledPropertyMixin, NamePropertyMixin, ParentFormGroupPropertyMixin, ReadonlyPropertyMixin, SizePropertyMixin, TabIndexPropertyMixin],
+  mixins: [AttributesProviderMixin, ClassesProviderMixin, InjectParentFormProviderMixin, ModelProviderMixin, SchemaProviderMixin, ClickInputRefMethodMixin, FocusInputRefMethodMixin, EmitChangeMethodMixin, EmitClickMethodMixin, EmitFocusMethodMixin, EmitHoverMethodMixin, EmitInputMethodMixin, EmitKeydownMethodMixin, ClearablePropertyMixin, properties_DisabledPropertyMixin, NamePropertyMixin, ParentFormGroupPropertyMixin, ReadonlyPropertyMixin, SizePropertyMixin, TabIndexPropertyMixin],
   created: function created() {
     var _this = this;
 
