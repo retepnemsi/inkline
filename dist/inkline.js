@@ -13780,7 +13780,11 @@ var ClickInputRefMethodMixin_component = normalizeComponent(
      * Handler for change event
      */
     emitInput: function emitInput(value) {
-      return this.$emit('input', value);
+      if (this.forceupper) {
+        value = value.toUpperCase();
+      }
+
+      return this.$emit("input", value);
     }
   }
 });
@@ -14649,7 +14653,7 @@ var ClearablePropertyMixin_component = normalizeComponent(
 
 
 
- // import EmitInputMethodMixin from '@inkline/inkline/src/mixins/components/methods/EmitInputMethodMixin';
+
 
 
 
@@ -14671,19 +14675,7 @@ var ClearablePropertyMixin_component = normalizeComponent(
       default: false
     }
   },
-  mixins: [AttributesProviderMixin, ClassesProviderMixin, InjectParentFormProviderMixin, ModelProviderMixin, SchemaProviderMixin, ClickInputRefMethodMixin, FocusInputRefMethodMixin, EmitChangeMethodMixin, EmitClickMethodMixin, EmitFocusMethodMixin, EmitHoverMethodMixin, // EmitInputMethodMixin,
-  EmitKeydownMethodMixin, ClearablePropertyMixin, properties_DisabledPropertyMixin, NamePropertyMixin, ParentFormGroupPropertyMixin, ReadonlyPropertyMixin, SizePropertyMixin, TabIndexPropertyMixin],
-  methods: {
-    emitInput: function emitInput(value) {
-      console.log("forceupper = ".concat(this.forceupper));
-
-      if (this.forceupper) {
-        value = value.toUpperCase();
-      }
-
-      return this.$emit('input', value);
-    }
-  },
+  mixins: [AttributesProviderMixin, ClassesProviderMixin, InjectParentFormProviderMixin, ModelProviderMixin, SchemaProviderMixin, ClickInputRefMethodMixin, FocusInputRefMethodMixin, EmitChangeMethodMixin, EmitClickMethodMixin, EmitFocusMethodMixin, EmitHoverMethodMixin, EmitInputMethodMixin, EmitKeydownMethodMixin, ClearablePropertyMixin, properties_DisabledPropertyMixin, NamePropertyMixin, ParentFormGroupPropertyMixin, ReadonlyPropertyMixin, SizePropertyMixin, TabIndexPropertyMixin],
   created: function created() {
     var _this = this;
 
