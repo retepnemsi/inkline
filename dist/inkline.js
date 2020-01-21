@@ -14653,7 +14653,6 @@ var ClearablePropertyMixin_component = normalizeComponent(
 
 
 
- // import ModelProviderMixin from '@inkline/inkline/src/mixins/forms/providers/ModelProviderMixin';
 
 
 
@@ -14677,14 +14676,7 @@ var ClearablePropertyMixin_component = normalizeComponent(
   components: {
     IFormGroup: FormGroup
   },
-  props: {
-    forceupper: {
-      type: Boolean,
-      default: false
-    }
-  },
-  mixins: [AttributesProviderMixin, ClassesProviderMixin, InjectParentFormProviderMixin, // ModelProviderMixin,
-  UpperCaseModelProviderMixin, SchemaProviderMixin, ClickInputRefMethodMixin, FocusInputRefMethodMixin, EmitChangeMethodMixin, EmitClickMethodMixin, EmitFocusMethodMixin, EmitHoverMethodMixin, EmitInputMethodMixin, EmitKeydownMethodMixin, ClearablePropertyMixin, properties_DisabledPropertyMixin, NamePropertyMixin, ParentFormGroupPropertyMixin, ReadonlyPropertyMixin, SizePropertyMixin, TabIndexPropertyMixin],
+  mixins: [AttributesProviderMixin, ClassesProviderMixin, InjectParentFormProviderMixin, UpperCaseModelProviderMixin, SchemaProviderMixin, ClickInputRefMethodMixin, FocusInputRefMethodMixin, EmitChangeMethodMixin, EmitClickMethodMixin, EmitFocusMethodMixin, EmitHoverMethodMixin, EmitInputMethodMixin, EmitKeydownMethodMixin, ClearablePropertyMixin, properties_DisabledPropertyMixin, NamePropertyMixin, ParentFormGroupPropertyMixin, ReadonlyPropertyMixin, SizePropertyMixin, TabIndexPropertyMixin],
   created: function created() {
     var _this = this;
 
